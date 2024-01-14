@@ -19,9 +19,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_14_021531) do
     t.text "prescription_additional_comment"
   end
 
-  create_table "karte_treatments", primary_key: ["treatment_id", "karte_hisoty_id"], force: :cascade do |t|
+  create_table "karte_treatments", primary_key: ["treatment_id", "karte_history_id"], force: :cascade do |t|
     t.string "treatment_id"
-    t.string "karte_hisoty_id"
+    t.string "karte_history_id"
   end
+
 
 end
