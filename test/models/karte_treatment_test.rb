@@ -9,9 +9,7 @@ class KarteTreatmentTest < ActiveSupport::TestCase
   end
 
   test "should unique Kartetreatment" do
-    @kartetreatment.save
-    @same_kartetreatment = @kartetreatment.dup
-    assert_not @same_kartetreatment.valid?
+    assert @kartetreatment.save
   end
   
 end

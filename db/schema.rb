@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_14_021531) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_14_045844) do
   create_table "karte_histories", primary_key: "karte_history_id", force: :cascade do |t|
     t.string "doctor"
     t.string "karte_id"
@@ -24,5 +24,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_14_021531) do
     t.string "karte_history_id"
   end
 
+  create_table "treatment_masters", primary_key: "treatment_id", force: :cascade do |t|
+    t.string "name"
+    t.integer "score"
+  end
 
 end
