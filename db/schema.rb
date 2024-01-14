@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_14_021210) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_14_021531) do
   create_table "karte_histories", primary_key: "karte_history_id", force: :cascade do |t|
     t.string "doctor"
     t.string "karte_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "prescription_additional_comment"
+  end
+
+  create_table "karte_treatments", primary_key: ["treatment_id", "karte_hisoty_id"], force: :cascade do |t|
+    t.string "treatment_id"
+    t.string "karte_hisoty_id"
   end
 
 end
