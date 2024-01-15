@@ -20,8 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_14_045844) do
   end
 
   create_table "karte_treatments", primary_key: ["treatment_id", "karte_history_id"], force: :cascade do |t|
-    t.string "treatment_id"
-    t.string "karte_history_id"
+    t.integer "treatment_id"
+    t.integer "karte_history_id"
   end
 
   create_table "treatment_masters", primary_key: "treatment_id", force: :cascade do |t|
