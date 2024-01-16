@@ -5,7 +5,7 @@ class TreatmentMasterTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @treatment = TreatmentMaster.new(treatment_id: 1,name: '注射', score: 100)
+    @treatment = TreatmentMaster.new(name: '注射', score: 100)
   end
 
   test "should valid" do
