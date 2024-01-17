@@ -1,0 +1,2 @@
+class KartePrescription < ApplicationRecord
+end
