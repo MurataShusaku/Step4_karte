@@ -12,6 +12,9 @@ Karte.delete_all
 PatientHistory.delete_all
 Patient.delete_all
 TreatmentMaster.delete_all
+KartePrescription.delete_all
+MedicineMaster.delete_all
+
 
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 'karte_histories'")
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 'treatments'")
@@ -20,6 +23,8 @@ ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 'patient_histories'")
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 'kartes'")
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 'treatment_masters'")
+ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 'karte_prescriptions'")
+ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 'medicine_masters'")
 
 Patient.create(created_by: '村田')
 Patient.create(created_by: '吉田')
@@ -73,3 +78,25 @@ KarteTreatment.create(karte_history_id:3, treatment_id:7)
 
 ClinicInformation.create(name: :'聖人クリニック', postal_code: :'305-0035', address: :'茨城県つくば市松代4-2-7',phone_number: :'000-0000-0000',prefecture_code: :'42', clinic_code: :'12344819')
 	     
+MedicineMaster.create(name: 'アスピリン', usage: '内服', unit: '錠')
+MedicineMaster.create(name: 'イブプロフェン', usage: '内服', unit: '錠')
+MedicineMaster.create(name: 'アセトアミノフェン', usage: '内服', unit: '錠')
+MedicineMaster.create(name: 'ペニシリン', usage: '内服', unit: '錠')
+MedicineMaster.create(name: 'アムロジピン', usage: '内服', unit: '錠')
+MedicineMaster.create(name: 'リゾチリン', usage: '頓用', unit: 'g')
+MedicineMaster.create(name: 'ベンゾカイン', usage: '外用', unit: 'g')
+MedicineMaster.create(name: 'ヒドロコルチゾン', usage: '外用', unit: 'g')
+MedicineMaster.create(name: 'クロトリマゾール', usage: '外用', unit: 'g')
+MedicineMaster.create(name: 'エナラプリル', usage: '内服', unit: '錠')
+
+
+KartePrescription.create(karte_history_id: 1, medicine_id: 1, as_needed: 0, as_needed_coment: '', coment: '食後に服用')
+KartePrescription.create(karte_history_id: 2, medicine_id: 1, as_needed: 1, as_needed_coment: 'お腹が痛くなったら飲んでください', coment: '')
+KartePrescription.create(karte_history_id: 2, medicine_id: 3, as_needed: 0, as_needed_coment: '', coment: '寝る前に服用')
+KartePrescription.create(karte_history_id: 2, medicine_id: 4, as_needed: 1, as_needed_coment: '頭痛がひどいときに飲んでください', coment: '')
+KartePrescription.create(karte_history_id: 5, medicine_id: 5, as_needed: 0, as_needed_coment: '', coment: '朝食後に服用')
+KartePrescription.create(karte_history_id: 5, medicine_id: 6, as_needed: 1, as_needed_coment: 'かゆみがある場合に使用', coment: '')
+KartePrescription.create(karte_history_id: 5, medicine_id: 1, as_needed: 0, as_needed_coment: '', coment: '毎食後に服用')
+KartePrescription.create(karte_history_id: 8, medicine_id: 3, as_needed: 1, as_needed_coment: '痛みが強いときに服用', coment: '')
+KartePrescription.create(karte_history_id: 9, medicine_id: 5, as_needed: 0, as_needed_coment: '', coment: '夜のみ服用')
+KartePrescription.create(karte_history_id: 10, medicine_id: 10, as_needed: 1, as_needed_coment: '不安を感じたときに飲んでください', coment: '')
