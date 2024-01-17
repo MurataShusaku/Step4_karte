@@ -1,1 +1,31 @@
-あああああ
+<h1>処方箋</h1>
+<p>この処方箋は、どの保険薬局でも有効です。</p>
+<dl>
+	<dt>公費負担者番号<dt>
+	<dd><%= %><dd>
+	<dt>公費負担医療の受給者番号<dt>
+	<dd><%= %><dd>
+	<dt>保険者番号<dt>
+	<dd><%= %><dd>
+	<dt>被保険者証・被保険者手帳の記号・番号<dt>
+	<dd><%= %><dd>
+</dl>
+
+<p>公費負担者番号：<%=@patient_history.public_expense_number %></p>
+<p>公費負担医療の受給者番号：<%=@patient_history.public_healthcare_number %></p>
+<p>保険者番号：<%= @patient_history.insuranse_card_number %></p>
+<p>被保険者証・被保険者手帳の記号・番号：<%=@patient_history.insured_persons_numer %></p>
+<p>氏名：<%=@patient_history.name %></p>
+
+<p>区分：<%=@patient_history.coverage_type %></p>
+<p>保険医療機関の所在地及び名称：<%=@clinic_information.name%><%=@clinic_information.address %></p>
+<p>電話番号：<%=@clinic_information.phone_number %></p>
+<p>保険医氏名：<%= %></p>
+<p>都道府県番号：<%=@clinic_information.prefecture_code %></p>
+<p>点数評判号：<%= %></p>
+<p>医療機関コード：<%=@clinic_information.clinic_code %></p>
+<p>交付年月日：<%= %></p>
+<p>処方箋の使用期間：<%= %></p>
+<p>処方箋：<%= %></p>
+<p>備考：<%=@karte_history.prescription_additional_comment %></p>
+
