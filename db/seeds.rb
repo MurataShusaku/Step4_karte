@@ -27,7 +27,7 @@ Patient.create(created_by: '畠中')
 Patient.create(created_by: '南野')
 
 PatientHistory.create(patient_id:1, name: :'久保建英', kana_name: :'クボタケフサ', insuranse_card_number:1222134,insured_persons_numer:89201731, public_expense_number:31931317, public_healthcare_number:110862,coverage_type: nil ,address: :'茨城県つくば市', memo: nil)
-PatientHistory.create(patient_id:1, name: :'三苫薫', kana_name: :'ミトマカオル', insuranse_card_number:849310,insured_persons_numer: 8943111, public_expense_number:78989384, public_healthcare_number:4334342,coverage_type: :'被保険者',address:nil, memo: nil)
+PatientHistory.create(patient_id:1, name: :'久保建英.最新', kana_name: :'クボタケフササイシン', insuranse_card_number:1222134,insured_persons_numer: 89201731, public_expense_number:78989384, public_healthcare_number:110862,coverage_type: :'被保険者',address:nil, memo: nil)
 PatientHistory.create(patient_id:2, name: :'伊藤純也', kana_name: :イトウジュンヤ, insuranse_card_number:78787878,insured_persons_numer:213213, public_expense_number:313131, public_healthcare_number:314411,coverage_type:nil,address: :'フランス', memo:'イトウジュンヤのメモ')
 
 
@@ -69,3 +69,7 @@ KarteTreatment.create(karte_history_id:3, treatment_id:1)
 KarteTreatment.create(karte_history_id:3, treatment_id:2)
 KarteTreatment.create(karte_history_id:3, treatment_id:5)
 KarteTreatment.create(karte_history_id:3, treatment_id:7)
+
+
+ClinicInformation.create(name: :'聖人クリニック', postal_code: :'305-0035', address: :'茨城県つくば市松代4-2-7',phone_number: :'000-0000-0000',prefecture_code: :'42', clinic_code: :'12344819')
+	     

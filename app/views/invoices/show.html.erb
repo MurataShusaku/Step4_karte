@@ -1,18 +1,42 @@
+<% tax_rate = 0.1r %>
+<% total = @treatments.inject(0){|result,tre|result += tre.score } * 10 %>
+
 <h1>請求書</h1>
+<p><%= @patient_history.name %> 様</p>
 <p>下記の通りご請求申し上げます。</p>
-ご請求額 <%= %>¥円
-<%=%>
-<%=%>
-<%=%>
+ご請求額 ¥<%= (total * (1 + tax_rate)).to_i%>円
+<p><%= @clinic_information.name%></p>
+<p><%= @clinic_information.postal_code%></p>
+<p><%= @clinic_information.address%></p>
+<p><%= @clinic_information.phone_number%></p>
+
+
 <table>
-  <tr>
-    <td>処置名</td>
-    <td>点数</td>
-    <td>金額</td>
-  </tr>
-  <tr>
-  
-  </tr>
-  <tr>
-  </tr>
+	<tr>
+		<td>処置名</td>
+		<td>点数</td>
+		<td>金額</td>
+	<tr>
+  <% @treatments.each do |tre| %>
+    <tr>
+      <td><%= tre.name %></td>
+      <td><%= tre.score %></td>
+      <td><%= tre.score * 10 %></td>
+    </tr>
+  <% end %>
+	
+	<tr>
+		<td></td>
+		<td>消費税</td>
+		<td><%=(total * (tax_rate)).to_i   %></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>小計</td>
+		<td><%=(total * (1 + tax_rate)).to_i  %></td>
+	</tr>
+
 </table>
+
+
+

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_16_050724) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_16_223511) do
+  create_table "clinic_informations", force: :cascade do |t|
+    t.string "name"
+    t.string "postal_code"
+    t.string "address"
+    t.string "phone_number"
+    t.string "prefecture_code"
+    t.string "clinic_code"
+  end
+
   create_table "karte_histories", force: :cascade do |t|
     t.string "doctor"
     t.string "karte_id"
