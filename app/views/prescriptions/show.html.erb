@@ -27,11 +27,14 @@
 <p>交付年月日：<%= %></p>
 <p>処方箋の使用期間：<%= %></p>
 <p>処方箋の薬とか容量とか</p>
-<dl>
-	<
-	<dt><%= %></dt>
-	<dd><%= %></dd>
-</dl>
+<ul>
+	<% @prescriptions.each do |pre| %>
+		<% master = pre.medicine_master %>
+		<li><%= master.name %> <%= pre.amount %><%= master.unit %> <%= pre.coment %> <%= pre.as_needed %> <%= pre.as_needed_coment %></li>
+	<% end %>
+</ul>
+
+#{master.name} pre.amout master.unit master.usage pre.coment pre.as_needed pre.as_needed_coment
 
 <p>備考：<%=@karte_history.prescription_additional_comment %></p>
 

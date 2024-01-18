@@ -4,6 +4,7 @@ class KartePrescription < ApplicationRecord
 	
 
 	validates :karte_history_id, presence: true
+	validates :amount, presence: true
 	validates :medicine_id, presence: true
 	validates :as_needed, presence: true
 
