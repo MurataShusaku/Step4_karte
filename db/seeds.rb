@@ -31,11 +31,11 @@ Patient.create(created_by: '吉田')
 Patient.create(created_by: '畠中')
 Patient.create(created_by: '南野')
 
-PatientHistory.create(patient_id:1, name: :'久保建英', kana_name: :'クボタケフサ', insuranse_card_number:1222134,insured_persons_numer:89201731, public_expense_number:31931317, public_healthcare_number:110862,coverage_type: nil ,address: :'茨城県つくば市', memo: nil)
-PatientHistory.create(patient_id:1, name: :'久保建英.最新', kana_name: :'クボタケフササイシン', insuranse_card_number:1222134,insured_persons_numer: 89201731, public_expense_number:78989384, public_healthcare_number:110862,coverage_type: :'被保険者',address:nil, memo: nil)
-PatientHistory.create(patient_id:2, name: :'伊藤純也', kana_name: :イトウジュンヤ, insuranse_card_number:78787878,insured_persons_numer:213213, public_expense_number:313131, public_healthcare_number:314411,coverage_type:nil,address: :'フランス', memo:'イトウジュンヤのメモ')
-PatientHistory.create(patient_id:3, name: :'冨安健洋', kana_name: :トミヤスタケヒロ, insuranse_card_number:1223133,insured_persons_numer:3131933, public_expense_number:3130019, public_healthcare_number:990411,coverage_type:nil,address: :'イギリス', memo:'こんにちは冨安です')
-PatientHistory.create(patient_id:4, name: :'三苫薫', kana_name: :ミトマカオル, insuranse_card_number:90213133,insured_persons_numer:311933, public_expense_number:24330019, public_healthcare_number:99033411,coverage_type:nil,address: :'イギリス', memo:'こんにちは三苫です')
+PatientHistory.create(patient_id:1, name: :'久保建英', kana_name: :'クボタケフサ', insuranse_card_number:12221347,insured_persons_numer:89201731, public_expense_number:31931317, public_healthcare_number:66110862,coverage_type: :'被扶養者' ,address: :'茨城県つくば市', memo: nil)
+PatientHistory.create(patient_id:1, name: :'久保建英.最新', kana_name: :'クボタケフササイシン', insuranse_card_number:12282134,insured_persons_numer: 89201731, public_expense_number:78989384, public_healthcare_number:11090862,coverage_type: :'被保険者',address:nil, memo: nil)
+PatientHistory.create(patient_id:2, name: :'伊藤純也', kana_name: :イトウジュンヤ, insuranse_card_number:78787878,insured_persons_numer:21321003, public_expense_number:31311111, public_healthcare_number:31441991,coverage_type: :'被保険者',address: :'フランス', memo:'イトウジュンヤのメモ')
+PatientHistory.create(patient_id:3, name: :'冨安健洋', kana_name: :トミヤスタケヒロ, insuranse_card_number:12238133,insured_persons_numer:31321933, public_expense_number:31309019, public_healthcare_number:99040911,coverage_type: :'被扶養者',address: :'イギリス', memo:'こんにちは冨安です')
+PatientHistory.create(patient_id:4, name: :'三苫薫', kana_name: :ミトマカオル, insuranse_card_number:90213133,insured_persons_numer:9311933, public_expense_number:24330019, public_healthcare_number:99033411,coverage_type:nil,address: :'イギリス', memo:'こんにちは三苫です')
 
 
 Karte.create(patient_id:1)

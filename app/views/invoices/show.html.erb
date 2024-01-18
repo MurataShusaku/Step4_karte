@@ -7,7 +7,7 @@
 		<div class="name-amount">
 			<p id="patient-name"><%= @patient_history.name %> 様</p>
 			<p>下記の通りご請求申し上げます。</p>
-			<p id="total-amount">ご請求額¥ <%= (total * (1 + tax_rate)).to_i%>円</p>
+			<p id="total-amount">ご請求額 <%= (total * (1 + tax_rate)).to_i%>円</p>
 		</div>
 		<div class="clinic-information">
 			<p><%= @clinic_information.name%></p>

@@ -1,15 +1,86 @@
-<h1>処方箋</h1>
-<p>この処方箋は、どの保険薬局でも有効です。</p>
-<dl>
-	<dt>公費負担者番号<dt>
-	<dd><%= %><dd>
-	<dt>公費負担医療の受給者番号<dt>
-	<dd><%= %><dd>
-	<dt>保険者番号<dt>
-	<dd><%= %><dd>
-	<dt>被保険者証・被保険者手帳の記号・番号<dt>
-	<dd><%= %><dd>
-</dl>
+<section class="prescription-box">
+	<h1>処方箋</h1>
+	<p id="under-shoho">(この処方箋は、どの保険薬局でも有効です。)</p>
+
+
+
+	<table class= "first-table">
+		<tr>
+			<th class="col-1">公費負担者番号</th>
+			<td class="col-2"><%=@patient_history.public_expense_number %></td>
+			<th class="col-3">保険者番号</th>
+			<td class="col-4"><%=@patient_history.insuranse_card_number %></td>
+		</tr>
+		<tr>
+			<th class="col-5">公費負担医療の受給者番号</th>
+			<td><%=@patient_history.public_healthcare_number %></td>
+			<th>被保険者証・被保険者手帳の記号・番号</th>
+			<td><%=@patient_history.insured_persons_numer %></td>
+		</tr>
+	</table>
+	<table class="second-table">
+		<tr>
+			<th rowspan="3">患者</th>
+			<th>氏名</th>
+			<td>患者のを入れます<td>
+		</tr>
+		<tr>
+			<th>生年月日</th>
+			<td>患者の生年月日を入れます</td>
+			<td>男・女</td>
+		</tr>
+		<tr>
+			<th>区分</th>
+			<td>被保険者</td>
+			<td>被扶養者</td>
+		</tr>
+	</table>
+	<table class="third-table">
+		<tr>
+			<th>交付年月日</th>
+			<td>交付年月日を入れます</td>
+			<th>処方箋の使用期間</th>
+			<td>令和　年　月　日</td>
+		</tr>
+	</table>
+	<table class="forth-table">
+		<tr>
+			<th>処方</th>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<table class="fifth-table">
+		<tr>
+			<th rowspan="2">備考</th>
+			<td></td>
+		</tr>
+		<tr>
+		<td>保険薬局が調剤時に残薬を確認した場合の対応(特に指示がある場合は「レ」又は「×」を記載すること。)<br>   □保険医療機関へ疑義照会した上で調剤   □保険医療機関へ情報提供</td>
+	</tr>
+	</table>
+	<table class="sixth-table">
+		<tr>
+			<th>調剤済年月日</th>
+			<td>令和　　年　　月　　日</td>
+			<th>公費負担者番号</th>
+			<td><td>
+		</tr>
+	</table>
+	<table class="sixth-table">
+		<tr>
+			<th>保険薬局の所在地<br>及び名称<br>保険薬剤師氏名</th>
+			<td>印</td>
+			<th>公費負担医療の<br>受給者番号</th>
+			<td><td>
+		</tr>
+	</table>
+	<p id="additional">備考 1.「処方」欄には、薬名、分量、用法及び用量を記載すること。<br>
+	2.この用紙は、A列5番を標準とすること。<br> 
+	3.療養の給付及び公費負担医療に関する費用の請求に関する省令(昭和51年厚生省令第36号)第1条の公費負担医療については、「保険医療機関」とある<br>
+	のは「公費負担医療の担当医療機関」と、「保険医氏名」とあるのは「公費負担医療の担当医氏名」と読み替えるものとすること。</p>
+
+</section>
 
 <p>公費負担者番号：<%=@patient_history.public_expense_number %></p>
 <p>公費負担医療の受給者番号：<%=@patient_history.public_healthcare_number %></p>
@@ -30,11 +101,10 @@
 <ul>
 	<% @prescriptions.each do |pre| %>
 		<% master = pre.medicine_master %>
-		<li><%= master.name %> <%= pre.amount %><%= master.unit %> <%= pre.coment %> <%= pre.as_needed %> <%= pre.as_needed_coment %></li>
+		<li><%= master.name %><%= pre.amount %><%= master.unit %> <%= pre.coment %> <%= pre.as_needed %> <%= pre.as_needed_coment %></li>
 	<% end %>
 </ul>
 
-#{master.name} pre.amout master.unit master.usage pre.coment pre.as_needed pre.as_needed_coment
 
 <p>備考：<%=@karte_history.prescription_additional_comment %></p>
 

@@ -1,0 +1,47 @@
+*{
+	box-sizing: border-box;
+}
+.prescription-box{
+	padding: 3px 10px;
+	margin: auto;
+	width: 700px;
+	height: 989px;
+	border: 1px solid;
+	display: flex;
+	font-size: 12px;
+	flex-direction: column;
+}
+h1{
+	font-size: 22px;
+	margin:0px auto 0px;
+}
+
+#under-shoho{
+	margin: 0px auto;
+}
+table{	border-collapse: collapse;}
+
+.first-table{
+
+	width: 100%;
+	margin: 30px auto ;
+}
+
+th,td{
+	border: 1px solid #696969;
+	padding: 4px;
+}
+
+.col-1{width: 18%;}
+.col-2{width: 28%;}
+.col-3{width: 24%;}
+.col-4{width: 28%;}
+
+
+.second-table{
+  width: 50%;
+  margin: 0 ;
+	justify-content:start ;
+}
+
+#additional{font-size: 8px;}
