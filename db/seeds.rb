@@ -102,3 +102,4 @@ KartePrescription.create(karte_history_id: 5, medicine_id: 1, as_needed: 0, as_n
 KartePrescription.create(karte_history_id: 8, medicine_id: 3, as_needed: 1, as_needed_coment: '痛みが強いときに服用', coment: '')
 KartePrescription.create(karte_history_id: 9, medicine_id: 5, as_needed: 0, as_needed_coment: '', coment: '夜のみ服用')
 KartePrescription.create(karte_history_id: 10, medicine_id: 10, as_needed: 1, as_needed_coment: '不安を感じたときに飲んでください', coment: '')
+

@@ -4,5 +4,6 @@ class InvoicesController < ApplicationController
 		@treatments = @karte_history.treatments
 		@clinic_information = ClinicInformation.last
 		@patient_history = @karte_history.karte.patient.patient_histories.last
+
 	end
 end
