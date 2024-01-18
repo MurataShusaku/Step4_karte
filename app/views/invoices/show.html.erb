@@ -1,42 +1,55 @@
 <% tax_rate = 0.1r %>
 <% total = @treatments.inject(0){|result,tre|result += tre.score } * 10 %>
 
-<h1>請求書</h1>
-<p><%= @patient_history.name %> 様</p>
-<p>下記の通りご請求申し上げます。</p>
-ご請求額 ¥<%= (total * (1 + tax_rate)).to_i%>円
-<p><%= @clinic_information.name%></p>
-<p><%= @clinic_information.postal_code%></p>
-<p><%= @clinic_information.address%></p>
-<p><%= @clinic_information.phone_number%></p>
+<section class="invoice-box">
+	<h1>請求書</h1>
+	<div class="invoice-up-side">
+		<div class="name-amount">
+			<p id="patient-name"><%= @patient_history.name %> 様</p>
+			<p>下記の通りご請求申し上げます。</p>
+			<p id="total-amount">ご請求額¥ <%= (total * (1 + tax_rate)).to_i%>円</p>
+		</div>
+		<div class="clinic-information">
+			<p><%= @clinic_information.name%></p>
+			<p><%= @clinic_information.postal_code%><br><%= @clinic_information.address%></p>
+			<p><%= @clinic_information.phone_number%></p>
+		</div>
+	</div>
+
+	<table>
+		<tr class="caption">
+			<th class="col-1",class="left">処置名</th>
+			<th class="col-2">点数</th>
+			<th class="col-3">金額</th>
+		</tr>
+		<% @treatments.each do |tre| %>
+			<tr>
+				<th class="col-left"><%= tre.name %></th>
+				<td class="col-mid-right"><%= tre.score %></td>
+				<td class="col-mid-right"><%= tre.score * 10 %></td>
+			</tr>
+		<% end %>
+		
+		<tr>
+			<td class="no-col"></td>
+			<td>小計</td>
+			<td class="col-mid-right"><%=total %></td>
+		</tr>
+		<tr>
+			<td class="no-col"></td>
+			<td>消費税<%=(tax_rate * 100).to_i %>%</td>
+			<td class="col-mid-right"><%=(total * (tax_rate)).to_i%></td>
+		</tr>
+		<tr>
+			<td class="no-col"></td>
+			<td>合計</td>
+			<td class="col-mid-right"><%=(total * (1 + tax_rate)).to_i  %></td>
+		</tr>
 
 
-<table>
-	<tr>
-		<td>処置名</td>
-		<td>点数</td>
-		<td>金額</td>
-	<tr>
-  <% @treatments.each do |tre| %>
-    <tr>
-      <td><%= tre.name %></td>
-      <td><%= tre.score %></td>
-      <td><%= tre.score * 10 %></td>
-    </tr>
-  <% end %>
-	
-	<tr>
-		<td></td>
-		<td>消費税</td>
-		<td><%=(total * (tax_rate)).to_i   %></td>
-	</tr>
-	<tr>
-		<td></td>
-		<td>小計</td>
-		<td><%=(total * (1 + tax_rate)).to_i  %></td>
-	</tr>
+	</table>
 
-</table>
+</section>
 
 
 

@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+*{
+	box-sizing: border-box;
+}
+.invoice-box{
+	padding: 25px;
+	margin: auto;
+	width: 600px;
+	height: 848px;
+	border: 1px solid;
+	display: flex;
+
+	flex-direction: column;
+}
+h1{
+	font-size: 35px;
+	margin:0px auto 15px;
+}
+p{
+	font-size: 17px;
+}
+.name-amount{
+}
+.invoice-up-side{
+	display: flex;
+	flex-direction: row;
+}
+
+/* 患者名の装飾 */
+#patient-name{
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: solid;
+}
+#total-amount{
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: solid;
+}
+.clinic-information{
+	margin-left: 25px;
+	padding-top: 20px;
+}
+.clinic-information p{
+	margin: 11px;
+}
+
+/* テーブルーーーーーーーーーーーーーー */
+table{
+	border-collapse: collapse;
+	width: 100%;
+	margin: 30px auto ;
+}
+
+th,td{
+	border: 1px solid #696969;
+	padding: 4px;
+}
+.col-1{width: 60%;}
+.col-2{width: 20%;}
+.col-3{width: 20%;}
+
+.caption{
+	background-color: #ccc;
+}
+.col-left{
+	text-align: start;
+	padding-left: 13px;
+}
+.col-mid-right{
+	text-align: end;
+}
+.no-col{
+	border: none;
+}
