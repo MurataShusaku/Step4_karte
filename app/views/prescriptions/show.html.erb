@@ -95,16 +95,17 @@
 <p>都道府県番号：<%=@clinic_information.prefecture_code %></p>
 <p>点数評判号：<%= %></p>
 <p>医療機関コード：<%=@clinic_information.clinic_code %></p>
-<p>交付年月日：<%= %></p>
+<p>交付年月日：🤪🤪🤪<%= @karte_history.created_at%></p>
 <p>処方箋の使用期間：<%= %></p>
 <p>処方箋の薬とか容量とか</p>
-<ul>
+<ul>🤪🤪🤪
 	<% @prescriptions.each do |pre| %>
 		<% master = pre.medicine_master %>
-		<li><%= master.name %><%= pre.amount %><%= master.unit %> <%= pre.coment %> <%= pre.as_needed %> <%= pre.as_needed_coment %></li>
+		<li><%= master.name %><%= pre.amount %><%= master.unit %> <%= pre.comment %> <%= pre.as_needed %> <%= pre.as_needed_comment %></li>
 	<% end %>
 </ul>
 
+<p>@prescriptions.class</p>
 
 <p>備考：<%=@karte_history.prescription_additional_comment %></p>
 

@@ -33,8 +33,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083313) do
     t.integer "medicine_id"
     t.integer "amount"
     t.string "as_needed"
-    t.string "as_needed_coment"
-    t.string "coment"
+    t.string "as_needed_comment"
+    t.string "comment"
   end
 
   create_table "karte_treatments", force: :cascade do |t|

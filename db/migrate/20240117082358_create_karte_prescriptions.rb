@@ -5,8 +5,8 @@ class CreateKartePrescriptions < ActiveRecord::Migration[7.1]
       t.integer :medicine_id
       t.integer :amount
       t.string :as_needed
-      t.string :as_needed_coment
-      t.string :coment
+      t.string :as_needed_comment
+      t.string :comment
     end
   end
 end
