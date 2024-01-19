@@ -142,17 +142,44 @@ th,td{
 
 #additional{font-size: 8px;}
 
+.box-side{
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: end;
+	height: 15%;
+}
+
 .third-table{
-	height: 12%;
+	height: 90%;
+	width: 45%;
 }
 .col-3-1{width: 4%;}
 .col-3-2{width: 17%;}
 .col-3-3{width: 25%;}
 .col-3-4{width: 28%;}
 
+
+.pre-clinic-information{
+	width: 53%;
+	margin-left: 2%;
+}
+
+.dl-clinic-information{
+	display: flex;
+	flex-wrap: wrap;
+}
+.prefecture-table{
+	width: 100% ;
+
+}
+
+
 .forth-table{
 	height: 5%;
 }
+
+
 
 
 .fifth-table{

@@ -57,14 +57,20 @@ TreatmentMaster.create(name: :'レントゲン肺', score: 9000)
 TreatmentMaster.create(name: :'採血20ml', score: 9000)
 TreatmentMaster.create(name: :'採血40ml', score: 9000)
 
+Staff.create(created_by: "村田")
+Staff.create(created_by: "村田")
+
+StaffHistory.create(staff_id: 1,name:"高山真聖")
+StaffHistory.create(staff_id: 2,name:"菅野久樹")
+
 KarteHistory.create(doctor: 1, karte_id: 1, prescription_additional_comment: :'いい感じじゃん')
 KarteHistory.create(doctor: 1, karte_id: 1, prescription_additional_comment: nil)
-KarteHistory.create(doctor: 2, karte_id: 2, prescription_additional_comment: :'保険適用')
-KarteHistory.create(doctor: 3, karte_id: 3, prescription_additional_comment: :'これでお願いします')
-KarteHistory.create(doctor: 3, karte_id: 5, prescription_additional_comment: nil)
-KarteHistory.create(doctor: 3, karte_id: 6, prescription_additional_comment: nil)
-KarteHistory.create(doctor: 3, karte_id: 7, prescription_additional_comment: :'いいと思います')
-KarteHistory.create(doctor: 4, karte_id: 8, prescription_additional_comment: :'すっご〜〜い')
+KarteHistory.create(doctor: 1, karte_id: 2, prescription_additional_comment: :'保険適用')
+KarteHistory.create(doctor: 2, karte_id: 3, prescription_additional_comment: :'これでお願いします')
+KarteHistory.create(doctor: 2, karte_id: 5, prescription_additional_comment: nil)
+KarteHistory.create(doctor: 2, karte_id: 6, prescription_additional_comment: nil)
+KarteHistory.create(doctor: 2, karte_id: 7, prescription_additional_comment: :'いいと思います')
+KarteHistory.create(doctor: 2, karte_id: 8, prescription_additional_comment: :'すっご〜〜い')
 
 
 KarteTreatment.create(karte_history_id:1, treatment_id:1)

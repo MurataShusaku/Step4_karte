@@ -29,28 +29,45 @@
 		</tr>
 	</table>
 
-	<table class="third-table">
-		<tr>
-			<th rowspan="3" class="col-3-1">患者</th>
-			<th class="col-4-2">氏名</th>
-			<td class="col-4-3"><%=@karte_history.karte.patient.patient_histories.last.name %><td>
-		</tr>
-		<tr>
-			<th>生年月日</th>
-			<td><%= @karte_history.karte.patient.patient_histories.last.birthdate.strftime("%Y年%m月%d日")%></td>
-			<td><%= @karte_history.karte.patient.patient_histories.last.sex_id %></td>
-		</tr>
-		<tr>
-			<th>区分</th>
-			<td>被保険者</td>
-			<td>被扶養者</td>
-		</tr>
-	</table>
+	<div class="box-side">
+		<table class="third-table">
+			<tr>
+				<th rowspan="3" class="col-3-1">患者</th>
+				<th class="col-4-2">氏名</th>
+				<td class="col-4-3"><%=@karte_history.karte.patient.patient_histories.last.name %><td>
+			</tr>
+			<tr>
+				<th>生年月日</th>
+				<td><%= @karte_history.karte.patient.patient_histories.last.birthdate.strftime("%Y年%m月%d日")%></td>
+				<td><%= @karte_history.karte.patient.patient_histories.last.sex_id %></td>
+			</tr>
+			<tr>
+				<th>区分</th>
+				<td>被保険者</td>
+				<td>被扶養者</td>
+			</tr>
+		</table>
 
-	<div class="pre-clinic-information">
-		<p><%= @clinic_information.name %></p>
-		<p><%= @clinic_information.phone_number %></p>
-		<p>保険医氏名<%=@patient_history %></p>
+
+		<div class="pre-clinic-information">
+			<dl class="dl-clinic-information">
+				<dt>保険医療機関の<br>所在地及び名称<dt>
+				<dd><%= @clinic_information.name %></dd>
+				<dt>電話番号</dt>
+				<dd><%= @clinic_information.phone_number %></dd>
+				<dt>保険医氏名<dt>
+				<dd><%=@karte_history.staff.staff_histories.last.name %></dd>
+			</dl>
+			<table class="prefecture-table">
+					<tr>
+						<th>都道府県番号</th>
+						<td><td>
+						<th>点数表<br>番号</th>
+						<td class="number_split">1</td>
+						<th>医療機関<br>コード</th>
+					</tr>
+			</table>
+		</div>
 	</div>
 
 	<table class="forth-table">
