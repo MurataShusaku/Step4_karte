@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_17_083313) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_19_100541) do
   create_table "clinic_informations", force: :cascade do |t|
     t.string "name"
     t.string "postal_code"
@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_17_083313) do
     t.string "coverage_type"
     t.string "address"
     t.string "memo"
+    t.date "birthdate"
   end
 
   create_table "patients", force: :cascade do |t|

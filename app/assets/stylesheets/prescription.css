@@ -22,24 +22,35 @@ h1{
 table{	border-collapse: collapse;}
 
 th,td{
-	border: 1px solid #696969;
-	padding: 4px;
+	border: 1px solid #000;
+	
 }
 
 .first-table{
-	height: 3%;
+	height: 4%;
 	width: 100%;
 }
 .col-1{width: 18%;}
-.col-2{width: 28%;}
+.col-2{width: 28%;
+	
+			}
 .col-3{width: 24%;}
 .col-4{width: 28%;}
+
+/* 保険番号数字分割のためのCSS--- */
+.number_split{
+	font-size: 22px;
+	text-align: center;
+}
+
 
 .second-table{
 	height: 4%;
   width: 100%;
   margin: 0 ;
 	justify-content:start ;
+	text-align: center;
+
 }
 .col-2-1{width: 18%;}
 .col-2-2{width: 28%;}
@@ -57,12 +68,30 @@ th,td{
 .col-3-3{width: 25%;}
 .col-3-4{width: 28%;}
 
+.forth-table{
+	height: 5%;
+}
+
 
 .fifth-table{
-	height: 20%;
+	height: 25%;
 }
 
 .col-5-1{width: 4%;}
 .col-5-2{width: 20%;}
-.col-5-3{width: 76%;}
+.col-5-3{width: 76%;
+					vertical-align: top;}
+
+#prescription-ul{padding: 10px;}
+.prescription-content{
+	font-size: 14px;
+	list-style: none;
+}
+
+.sixth-table{
+	height: 15%;
+}
+.seventh-table{
+	height: 4%;
+}
 

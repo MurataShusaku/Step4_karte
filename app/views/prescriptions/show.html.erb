@@ -2,40 +2,45 @@
 	<h1>処方箋</h1>
 	<p id="under-shoho">(この処方箋は、どの保険薬局でも有効です。)</p>
 
-
-
 	<table class= "first-table">
 		<tr>
 			<th class="col-1">公費負担者番号</th>
-			<td class="col-2">
-				<% public_expence_number_array = @patient_history.public_expense_number.to_s.chars %>
-				<%=public_expence_number_array.each do |num| %>
-					 <span><%= num.to_i %></span>
+				<% @karte_history.karte.patient.patient_histories.last.public_expense_number.to_s.chars.each do |num| %>
+					<td class="number_split" class="col-2"><%= num.to_i %></td>
 				<% end %>
-			</td>
 			<th class="col-3">保険者番号</th>
-			<td class="col-4"><%=@patient_history.insuranse_card_number %></td>
+			
+			<% @karte_history.karte.patient.patient_histories.last.insuranse_card_number.to_s.chars.each do |num| %>
+				<td class="number_split" class="col-4"><%= num.to_i %></td>
+			<% end %>
 		</tr>
 	</table>
 
 	<table class="second-table">
 		<tr>
 			<th class="col-2-1">公費負担医療<br>の受給者番号</th>
-			<td class="col-2-2"><%=@patient_history.public_healthcare_number %></td>
+			<% @karte_history.karte.patient.patient_histories.last
+			.public_healthcare_number.to_s.chars.each do |num| %>
+				<td class="number_split" class="col-2"><%= num.to_i %></td>
+			<% end %>
 			<th class="col-2-3">被保険者証・被保険<br>者手帳の記号・番号</th>
-			<td class="col-2-4"><%=@patient_history.insured_persons_numer %></td>
+			<% @karte_history.karte.patient.patient_histories.last
+			.insured_persons_numer.to_s.chars.each do |num| %>
+				<td class="number_split" class="col-2-4"><%= num.to_i %></td>
+			<% end %>
 		</tr>
 	</table>
+
 	<table class="third-table">
 		<tr>
 			<th rowspan="3" class="col-3-1">患者</th>
 			<th class="col-4-2">氏名</th>
-			<td class="col-4-3">患者のを入れます<td>
+			<td class="col-4-3"><%=@karte_history.karte.patient.patient_histories.last.name %><td>
 		</tr>
 		<tr>
 			<th>生年月日</th>
-			<td>患者の生年月日を入れます</td>
-			<td>男・女</td>
+			<td><%= @karte_history.karte.patient.patient_histories.last.birthdate.strftime("%Y年%m月%d日")%></td>
+			<td><%= @karte_history.karte.patient.patient_histories.last.sex_id %></td>
 		</tr>
 		<tr>
 			<th>区分</th>
@@ -43,10 +48,17 @@
 			<td>被扶養者</td>
 		</tr>
 	</table>
+
+	<div class="pre-clinic-information">
+		<p><%= @clinic_information.name %></p>
+		<p><%= @clinic_information.phone_number %></p>
+		<p>保険医氏名<%=@patient_history.doctor %></p>
+	</div>
+
 	<table class="forth-table">
 		<tr>
 			<th>交付年月日</th>
-			<td>交付年月日を入れます</td>
+			<td><%= @karte_history.created_at.in_time_zone('Tokyo').to_date.strftime("%Y年%m月%d日") %></td>
 			<th>処方箋の使用期間</th>
 			<td>令和　年　月　日</td>
 		</tr>
@@ -54,9 +66,17 @@
 	<table class="fifth-table">
 		<tr>
 			<th class="col-5-1">処方</th>
-			<td class="col-5-2"></td>
-			<td class="col-5-3">個々の処方薬について、後発医薬品(ジェネリック医薬品)への変更に差し支えがあると判断した場合には、<br>
-			「変更不可」欄に「レ」又は「×」を記載し、「保険医署名」欄に署名又は記名・押印すること。</td>
+			<td class="col-5-2">変更不可</td>
+			<td class="col-5-3">
+			<p id="prescription_notion">個々の処方薬について、後発医薬品(ジェネリック医薬品)への変更に差し支えがあると判断した場合には、<br>
+			「変更不可」欄に「レ」又は「×」を記載し、「保険医署名」欄に署名又は記名・押印すること。</p>
+			<ul id="prescription-ul">
+				<% @karte_history.karte_prescriptions.each do |pre| %>
+					<% master = pre.medicine_master %>
+					<li class="prescription-content"><%= master.name %> <%= pre.amount %><%= master.unit %>：<%= pre.comment %> <%= pre.as_needed %><%= pre.as_needed_comment %></li>
+				<% end %>
+			</ul>
+			</td>
 		</tr>
 	</table>
 	<table class="sixth-table">
@@ -65,15 +85,31 @@
 			<td></td>
 		</tr>
 		<tr>
-		<td>保険薬局が調剤時に残薬を確認した場合の対応(特に指示がある場合は「レ」又は「×」を記載すること。)<br>   □保険医療機関へ疑義照会した上で調剤   □保険医療機関へ情報提供</td>
-	</tr>
+			<td><p>保険薬局が調剤時に残薬を確認した場合の対応(特に指示がある場合は「レ」又は「×」を記載すること。)<br>   □保険医療機関へ疑義照会した上で調剤   □保険医療機関へ情報提供</p></td>
+		</tr>
 	</table>
+	<table>
+		<tr>
+			<td><p>調剤実施回数(調剤回数に応じて、□に「レ」又は「×」を記載するとともに、調剤日及び次回調剤予定日を記載すること。)<br>
+			  □1回目調剤日(　　年  　月 　日) 　 □2回目調剤日(　　年  　月  　日) 　 　□3回目調剤日(　　年  　月  　日)<br> 
+			  　次回調剤予定日(　　年  　月  　日)  　 　次回調剤予定日(　　年  　月  　日)</p><td>
+		<tr>
+	</table>
+	<table>
+	</tba
 	<table class="seventh-table">
 		<tr>
 			<th>調剤済年月日</th>
-			<td>令和　　年　　月　　日</td>
+			<td>　　　年　　月　　日</td>
 			<th>公費負担者番号</th>
-			<td><td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 	</table>
 	<table class="eigth-table">
@@ -81,7 +117,14 @@
 			<th>保険薬局の所在地<br>及び名称<br>保険薬剤師氏名</th>
 			<td>印</td>
 			<th>公費負担医療の<br>受給者番号</th>
-			<td><td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 	</table>
 	<p id="additional">備考 1.「処方」欄には、薬名、分量、用法及び用量を記載すること。<br>
@@ -100,7 +143,7 @@
 <p>区分：<%=@patient_history.coverage_type %></p>
 <p>保険医療機関の所在地及び名称：<%=@clinic_information.name%><%=@clinic_information.address %></p>
 <p>電話番号：<%=@clinic_information.phone_number %></p>
-<p>保険医氏名：<%= %></p>
+<p>保険医氏名：</p>
 <p>都道府県番号：<%=@clinic_information.prefecture_code %></p>
 <p>点数評判号：<%= %></p>
 <p>医療機関コード：<%=@clinic_information.clinic_code %></p>
@@ -110,7 +153,7 @@
 <ul>
 	<% @prescriptions.each do |pre| %>
 		<% master = pre.medicine_master %>
-		<li><%= pre.amount %><%= master.unit %> <%= pre.comment %> <%= pre.as_needed %> <%= pre.as_needed_comment %></li>
+		<li><%= master.name %><%= pre.amount %><%= master.unit %> <%= pre.comment %> <%= pre.as_needed %> <%= pre.as_needed_comment %></li>
 	<% end %>
 </ul>
 
