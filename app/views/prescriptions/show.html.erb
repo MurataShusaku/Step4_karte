@@ -7,22 +7,30 @@
 	<table class= "first-table">
 		<tr>
 			<th class="col-1">公費負担者番号</th>
-			<td class="col-2"><%=@patient_history.public_expense_number %></td>
+			<td class="col-2">
+				<% public_expence_number_array = @patient_history.public_expense_number.to_s.chars %>
+				<%=public_expence_number_array.each do |num| %>
+					 <span><%= num.to_i %></span>
+				<% end %>
+			</td>
 			<th class="col-3">保険者番号</th>
 			<td class="col-4"><%=@patient_history.insuranse_card_number %></td>
 		</tr>
-		<tr>
-			<th class="col-5">公費負担医療の受給者番号</th>
-			<td><%=@patient_history.public_healthcare_number %></td>
-			<th>被保険者証・被保険者手帳の記号・番号</th>
-			<td><%=@patient_history.insured_persons_numer %></td>
-		</tr>
 	</table>
+
 	<table class="second-table">
 		<tr>
-			<th rowspan="3">患者</th>
-			<th>氏名</th>
-			<td>患者のを入れます<td>
+			<th class="col-2-1">公費負担医療<br>の受給者番号</th>
+			<td class="col-2-2"><%=@patient_history.public_healthcare_number %></td>
+			<th class="col-2-3">被保険者証・被保険<br>者手帳の記号・番号</th>
+			<td class="col-2-4"><%=@patient_history.insured_persons_numer %></td>
+		</tr>
+	</table>
+	<table class="third-table">
+		<tr>
+			<th rowspan="3" class="col-3-1">患者</th>
+			<th class="col-4-2">氏名</th>
+			<td class="col-4-3">患者のを入れます<td>
 		</tr>
 		<tr>
 			<th>生年月日</th>
@@ -35,7 +43,7 @@
 			<td>被扶養者</td>
 		</tr>
 	</table>
-	<table class="third-table">
+	<table class="forth-table">
 		<tr>
 			<th>交付年月日</th>
 			<td>交付年月日を入れます</td>
@@ -43,14 +51,15 @@
 			<td>令和　年　月　日</td>
 		</tr>
 	</table>
-	<table class="forth-table">
+	<table class="fifth-table">
 		<tr>
-			<th>処方</th>
-			<td></td>
-			<td></td>
+			<th class="col-5-1">処方</th>
+			<td class="col-5-2"></td>
+			<td class="col-5-3">個々の処方薬について、後発医薬品(ジェネリック医薬品)への変更に差し支えがあると判断した場合には、<br>
+			「変更不可」欄に「レ」又は「×」を記載し、「保険医署名」欄に署名又は記名・押印すること。</td>
 		</tr>
 	</table>
-	<table class="fifth-table">
+	<table class="sixth-table">
 		<tr>
 			<th rowspan="2">備考</th>
 			<td></td>
@@ -59,7 +68,7 @@
 		<td>保険薬局が調剤時に残薬を確認した場合の対応(特に指示がある場合は「レ」又は「×」を記載すること。)<br>   □保険医療機関へ疑義照会した上で調剤   □保険医療機関へ情報提供</td>
 	</tr>
 	</table>
-	<table class="sixth-table">
+	<table class="seventh-table">
 		<tr>
 			<th>調剤済年月日</th>
 			<td>令和　　年　　月　　日</td>
@@ -67,7 +76,7 @@
 			<td><td>
 		</tr>
 	</table>
-	<table class="sixth-table">
+	<table class="eigth-table">
 		<tr>
 			<th>保険薬局の所在地<br>及び名称<br>保険薬剤師氏名</th>
 			<td>印</td>
@@ -95,17 +104,16 @@
 <p>都道府県番号：<%=@clinic_information.prefecture_code %></p>
 <p>点数評判号：<%= %></p>
 <p>医療機関コード：<%=@clinic_information.clinic_code %></p>
-<p>交付年月日：🤪🤪🤪<%= @karte_history.created_at%></p>
+<p>交付年月日：<%= @karte_history.created_at%></p>
 <p>処方箋の使用期間：<%= %></p>
 <p>処方箋の薬とか容量とか</p>
-<ul>🤪🤪🤪
+<ul>
 	<% @prescriptions.each do |pre| %>
 		<% master = pre.medicine_master %>
-		<li><%= master.name %><%= pre.amount %><%= master.unit %> <%= pre.comment %> <%= pre.as_needed %> <%= pre.as_needed_comment %></li>
+		<li><%= pre.amount %><%= master.unit %> <%= pre.comment %> <%= pre.as_needed %> <%= pre.as_needed_comment %></li>
 	<% end %>
 </ul>
 
-<p>@prescriptions.class</p>
 
 <p>備考：<%=@karte_history.prescription_additional_comment %></p>
 

@@ -8,7 +8,7 @@
 	height: 989px;
 	border: 1px solid;
 	display: flex;
-	font-size: 12px;
+	font-size: 10px;
 	flex-direction: column;
 }
 h1{
@@ -21,27 +21,48 @@ h1{
 }
 table{	border-collapse: collapse;}
 
-.first-table{
-
-	width: 100%;
-	margin: 30px auto ;
-}
-
 th,td{
 	border: 1px solid #696969;
 	padding: 4px;
 }
 
+.first-table{
+	height: 3%;
+	width: 100%;
+}
 .col-1{width: 18%;}
 .col-2{width: 28%;}
 .col-3{width: 24%;}
 .col-4{width: 28%;}
 
-
 .second-table{
-  width: 50%;
+	height: 4%;
+  width: 100%;
   margin: 0 ;
 	justify-content:start ;
 }
+.col-2-1{width: 18%;}
+.col-2-2{width: 28%;}
+.col-2-3{width: 24%;}
+.col-2-4{width: 28%;}
+
 
 #additional{font-size: 8px;}
+
+.third-table{
+	height: 12%;
+}
+.col-3-1{width: 4%;}
+.col-3-2{width: 17%;}
+.col-3-3{width: 25%;}
+.col-3-4{width: 28%;}
+
+
+.fifth-table{
+	height: 20%;
+}
+
+.col-5-1{width: 4%;}
+.col-5-2{width: 20%;}
+.col-5-3{width: 76%;}
+
