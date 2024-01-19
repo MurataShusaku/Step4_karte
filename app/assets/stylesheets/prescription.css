@@ -1,6 +1,88 @@
 *{
 	box-sizing: border-box;
 }
+
+*{
+  box-sizing: border-box;
+}
+
+/* ---------請求書-------------- */
+.invoice-box{
+  padding: 25px;
+  margin: auto;
+  width: 600px;
+  height: 848px;
+  border: 1px solid;
+  display: flex;
+	font-size: 17px;
+  flex-direction: column;
+}
+.invoice-h1{
+  font-size: 35px;
+  margin:0px auto 15px;
+}
+
+.name-amount{
+}
+.invoice-up-side{
+  display: flex;
+  flex-direction: row;
+}
+
+/* 患者名の装飾 */
+#patient-name{
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: solid;
+}
+#total-amount{
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: solid;
+}
+.clinic-information{
+  margin-left: 25px;
+  padding-top: 20px;
+}
+.clinic-information p{
+  margin: 11px;
+}
+
+/* テーブルーーーーーーーーーーーーーー */
+.invoice-table{
+  border-collapse: collapse;
+  width: 100%;
+  margin: 30px auto ;
+}
+
+.invoice-thtd{
+  border: 1px solid #696969;
+  padding: 4px;
+}
+.col-1{width: 60%;}
+.col-2{width: 20%;}
+.col-3{width: 20%;}
+
+.caption{
+  background-color: #ccc;
+}
+.col-left{
+  text-align: start;
+  padding-left: 13px;
+}
+.col-mid-right{
+  text-align: end;
+}
+.no-col{
+  border: none;
+}
+
+
+
+
+
+/* -------------------------------- */
+
 .prescription-box{
 	padding: 3px 10px;
 	margin: auto;

@@ -19,13 +19,11 @@
 	<table class="second-table">
 		<tr>
 			<th class="col-2-1">公費負担医療<br>の受給者番号</th>
-			<% @karte_history.karte.patient.patient_histories.last
-			.public_healthcare_number.to_s.chars.each do |num| %>
+			<% @karte_history.karte.patient.patient_histories.last.public_healthcare_number.to_s.chars.each do |num| %>
 				<td class="number_split" class="col-2"><%= num.to_i %></td>
 			<% end %>
 			<th class="col-2-3">被保険者証・被保険<br>者手帳の記号・番号</th>
-			<% @karte_history.karte.patient.patient_histories.last
-			.insured_persons_numer.to_s.chars.each do |num| %>
+			<% @karte_history.karte.patient.patient_histories.last.insured_persons_numer.to_s.chars.each do |num| %>
 				<td class="number_split" class="col-2-4"><%= num.to_i %></td>
 			<% end %>
 		</tr>
@@ -52,7 +50,7 @@
 	<div class="pre-clinic-information">
 		<p><%= @clinic_information.name %></p>
 		<p><%= @clinic_information.phone_number %></p>
-		<p>保険医氏名<%=@patient_history.doctor %></p>
+		<p>保険医氏名<%=@patient_history %></p>
 	</div>
 
 	<table class="forth-table">
