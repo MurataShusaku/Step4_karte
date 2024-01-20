@@ -90,7 +90,7 @@
 	height: 989px;
 	border: 1px solid;
 	display: flex;
-	font-size: 10px;
+	font-size: 9px;
 	flex-direction: column;
 }
 h1{
@@ -105,7 +105,6 @@ table{	border-collapse: collapse;}
 
 th,td{
 	border: 1px solid #000;
-	
 }
 
 .first-table{
@@ -147,15 +146,15 @@ th,td{
 	flex-direction: row;
 	justify-content: start;
 	align-items: end;
-	height: 15%;
+	height: 14%;
 }
 
 .third-table{
-	height: 90%;
-	width: 45%;
+	height: 80%;
+	width: 50%;
 }
-.col-3-1{width: 4%;}
-.col-3-2{width: 17%;}
+.col-3-1{width: 7%;}
+.col-3-2{width: 26%;}
 .col-3-3{width: 25%;}
 .col-3-4{width: 28%;}
 
@@ -163,15 +162,29 @@ th,td{
 .pre-clinic-information{
 	width: 53%;
 	margin-left: 2%;
+	height: 90%;
+
 }
 
 .dl-clinic-information{
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
+	
 }
 .prefecture-table{
 	width: 100% ;
 
+
+}
+.cli-item{
+	display: flex;
+	flex-direction: row;
+	margin: 4px;
+}
+
+.cli-item-dt{
+	width: 19%;
+	text-align-last: justify;
 }
 
 
@@ -193,14 +206,39 @@ th,td{
 
 #prescription-ul{padding: 10px;}
 .prescription-content{
-	font-size: 14px;
+	font-size: 12px;
 	list-style: none;
+	margin-bottom: 10px;
 }
 
 .sixth-table{
 	height: 15%;
 }
-.seventh-table{
-	height: 4%;
+.col-6-3{
+	height: 20%;
 }
+#p-col-6-3{
+	margin: 0px;
+	text-align: center;
+}
+
+#col-6-1-td{
+	display: flex;
+}
+
+
+.seventh-table{
+	height: 3%;
+}
+
+.col-7-1{width: 20%;}
+.col-7-2{width: 25%;}
+.col-7-3{width: 25%;}
+
+.eighth-table{
+	height: 3%;
+}
+.col-8-1{width: 20%;}
+.col-8-2{width: 25%;}
+.col-8-3{width: 29%;}
 
