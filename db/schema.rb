@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_19_110839) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_20_051304) do
   create_table "clinic_informations", force: :cascade do |t|
     t.string "name"
     t.string "postal_code"
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_19_110839) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "prescription_additional_comment"
+    t.date "prescription_limit_date"
   end
 
   create_table "karte_prescriptions", force: :cascade do |t|

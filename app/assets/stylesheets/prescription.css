@@ -147,13 +147,16 @@ th,td{
 	justify-content: start;
 	align-items: end;
 	height: 14%;
+
 }
 
 .third-table{
 	height: 80%;
 	width: 50%;
+	text-align: center;
+
 }
-.col-3-1{width: 7%;}
+.col-3-1{width: 5%;}
 .col-3-2{width: 26%;}
 .col-3-3{width: 25%;}
 .col-3-4{width: 28%;}
@@ -163,7 +166,6 @@ th,td{
 	width: 53%;
 	margin-left: 2%;
 	height: 90%;
-
 }
 
 .dl-clinic-information{
@@ -173,8 +175,6 @@ th,td{
 }
 .prefecture-table{
 	width: 100% ;
-
-
 }
 .cli-item{
 	display: flex;
@@ -186,13 +186,28 @@ th,td{
 	width: 19%;
 	text-align-last: justify;
 }
+.cli-item-dd{	position: relative;}
+
+.stamp-zone1{
+	position: absolute;
+	left: 150px;
+  border-radius: 50%;
+	border: solid 1px #000;
+  width: 15px;
+  height: 15px;
+  color: #000;
+  text-align: center;
+}
 
 
 .forth-table{
 	height: 5%;
 }
 
-
+.col-4-1{width: 20%;}
+.col-4-2{width: 28%;}
+.col-4-3{}
+.col-4-4{}
 
 
 .fifth-table{
@@ -200,7 +215,12 @@ th,td{
 }
 
 .col-5-1{width: 4%;}
-.col-5-2{width: 20%;}
+.col-5-2{
+	width: 15%;
+	vertical-align: top;}
+.not-change-words{
+	margin: 10px;
+}
 .col-5-3{width: 76%;
 					vertical-align: top;}
 
@@ -214,6 +234,18 @@ th,td{
 .sixth-table{
 	height: 15%;
 }
+
+.row-6-1{
+	height: 25%;
+}
+
+.col-6-1{
+	width: 4%;
+}
+.col-6-2{
+	width: 96%;
+	text-align: start;
+	}
 .col-6-3{
 	height: 20%;
 }
@@ -222,9 +254,8 @@ th,td{
 	text-align: center;
 }
 
-#col-6-1-td{
-	display: flex;
-}
+
+
 
 
 .seventh-table{
@@ -239,6 +270,19 @@ th,td{
 	height: 3%;
 }
 .col-8-1{width: 20%;}
-.col-8-2{width: 25%;}
+.col-8-2{
+	width: 25%;
+	text-align: end;
+	
+}
+.circle-stamp{
+	border-radius: 50%;
+	border: solid 1px #000;
+	padding: 2px;
+  width: 16px;
+  height: 16px;
+  color: #000;
+  text-align: center;
+}
 .col-8-3{width: 29%;}
 
