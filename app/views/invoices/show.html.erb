@@ -2,52 +2,60 @@
 <% total = @treatments.inject(0){|result,tre|result += tre.score } * 10 %>
 
 <section class="invoice-box">
-	<h1 class="invoice-h1">請求書</h1>
+	<h1 class="invoice-h1">診療費請求書兼領収書</h1>
 	<div class="invoice-up-side">
 		<div class="name-amount">
-			<p id="patient-name"><%= @patient_history.name %> 様</p>
-			<p>下記の通りご請求申し上げます。</p>
+			<p id="patient-name">氏名　<%= @patient_history.name %> 様</p>
+			
 			<p id="total-amount">ご請求額 <%= (total * (1 + tax_rate)).to_i%>円</p>
 		</div>
-		<div class="clinic-information">
-			<p><%= @clinic_information.name%></p>
-			<p><%= @clinic_information.postal_code%><br><%= @clinic_information.address%></p>
-			<p><%= @clinic_information.phone_number%></p>
+		<div class="patient-information">
+			<dl class="patient-information-dl">
+				<div class="patient-information-dl-div"><dt>診療日</dt><dd>ああ</dd></div>
+				<div class="patient-information-dl-div"><dt>受診科</dt><dd>ああ</dd></div>
+				<div class="patient-information-dl-div"><dt>保険種類</dt><dd>ああ</dd></div>
+				<div class="patient-information-dl-div"><dt>本人・家族</dt><dd>ああ</dd></div>
+				<div class="patient-information-dl-div"><dt>負担割合</dt><dd>ああ</dd></div>
+			</dl>
 		</div>
 	</div>
-
 	<table class="invoice-table">
-		<tr class="caption">
-			<th class="invoice-thtd",class="col-1",class="left">処置名</th>
-			<th class="invoice-thtd",class="col-2">点数</th>
-			<th class="invoice-thtd",class="col-3">金額</th>
-		</tr>
+
 		<% @treatments.each do |tre| %>
 			<tr>
 				<th class="invoice-thtd",class="col-left"><%= tre.name %></th>
 				<td class="invoice-thtd",class="col-mid-right"><%= tre.score %></td>
-				<td class="invoice-thtd",class="col-mid-right"><%= tre.score * 10 %></td>
+			
 			</tr>
 		<% end %>
 		
 		<tr>
-			<td class="invoice-thtd",class="no-col"></td>
-			<td class="invoice-thtd">小計</td>
+			<td class="invoice-thtd">合計点数</td>
 			<td class="invoice-thtd",class="col-mid-right"><%=total %></td>
 		</tr>
-		<tr>
-			<td class="invoice-thtd",class="no-col"></td>
-			<td class="invoice-thtd">消費税<%=(tax_rate * 100).to_i %>%</td>
-			<td class="invoice-thtd",class="col-mid-right"><%=(total * (tax_rate)).to_i%></td>
-		</tr>
-		<tr>
-			<td class="invoice-thtd",class="no-col"></td>
-			<td class="invoice-thtd">合計</td>
-			<td class="invoice-thtd",class="col-mid-right"><%=(total * (1 + tax_rate)).to_i  %></td>
-		</tr>
-
-
 	</table>
+
+	<table>
+		<tr>
+			<th>保険分負担額</th>
+			<td>😭</td>
+		</tr>
+		<tr>
+			<th>保険外負担額</th>
+			<td>😭</td>
+		</tr>
+	</table>
+
+	<table>
+		<tr>
+			<th>領収金額</th>
+			<td>😭</td>
+		</tr>
+	</table>
+
+
+	
+
 
 </section>
 

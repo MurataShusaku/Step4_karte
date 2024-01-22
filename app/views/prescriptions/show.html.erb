@@ -6,13 +6,25 @@
 	<table class= "first-table">
 		<tr>
 			<th class="col-1">公費負担者番号</th>
-				<% @karte_history.karte.patient.patient_histories.last.public_expense_number.to_s.chars.each do |num| %>
-					<td class="number_split" class="col-2"><%= num.to_i %></td>
+				<% if @karte_history.karte.patient.patient_histories.last.public_expense_number.nil?  %>
+					<% 8.times do %>
+						<td class="number_split" class="col-2"></td>
+					<% end %>
+				<% else %>
+					<% @karte_history.karte.patient.patient_histories.last.public_expense_number.to_s.chars.each do |num| %>
+						<td class="number_split" class="col-2"><%= num.to_i %></td>
+					<% end %>
 				<% end %>
+
 			<th class="col-3">保険者番号</th>
-			
-			<% @karte_history.karte.patient.patient_histories.last.insuranse_card_number.to_s.chars.each do |num| %>
-				<td class="number_split" class="col-4"><%= num.to_i %></td>
+			<% if @karte_history.karte.patient.patient_histories.last.insuranse_card_number.nil? %>
+				<% 8.times do %>
+					<td class="number_split" class="col-4"></td>
+				<% end %>
+			<% else %>
+				<% @karte_history.karte.patient.patient_histories.last.insuranse_card_number.to_s.chars.each do |num| %>
+					<td class="number_split" class="col-4"><%= num.to_i %></td>
+				<% end %>
 			<% end %>
 		</tr>
 	</table>
@@ -20,12 +32,24 @@
 	<table class="second-table">
 		<tr>
 			<th class="col-2-1">公費負担医療<br>の受給者番号</th>
-			<% @karte_history.karte.patient.patient_histories.last.public_healthcare_number.to_s.chars.each do |num| %>
-				<td class="number_split" class="col-2"><%= num.to_i %></td>
+			<% if @karte_history.karte.patient.patient_histories.last.public_healthcare_number.nil? %>
+				<% 8.times do %>
+					<td class="number_split" class="col-2"></td>
+				<% end %>
+			<% else %>
+				<% @karte_history.karte.patient.patient_histories.last.public_healthcare_number.to_s.chars.each do |num| %>
+					<td class="number_split" class="col-2"><%= num.to_i %></td>
+				<% end %>
 			<% end %>
 			<th class="col-2-3">被保険者証・被保険<br>者手帳の記号・番号</th>
-			<% @karte_history.karte.patient.patient_histories.last.insured_persons_numer.to_s.chars.each do |num| %>
-				<td class="number_split" class="col-2-4"><%= num.to_i %></td>
+			<% if @karte_history.karte.patient.patient_histories.last.insured_persons_numer.nil? %>
+				<% 8.times do %>
+					<td class="number_split" class="col-2-4"></td>
+				<% end %>
+			<% else %>
+				<% @karte_history.karte.patient.patient_histories.last.insured_persons_numer.to_s.chars.each do |num| %>
+					<td class="number_split" class="col-2-4"><%= num.to_i %></td>
+				<% end %>
 			<% end %>
 		</tr>
 	</table>
@@ -67,15 +91,25 @@
 				<table class="prefecture-table">
 					<tr>
 						<th>都道府県番号</th>
-						<% @clinic_information.prefecture_code.to_s.chars.each do |num| %>
-							<td class="number_split"><%=num.to_i %></td>
+						<% if @clinic_information.prefecture_code.nil? %>
+							<td class="number_split"></td><td class="number_split"></td>
+						<% else %>
+							<% @clinic_information.prefecture_code.to_s.chars.each do |num| %>
+								<td class="number_split"><%=num.to_i %></td>
+							<% end %>
 						<% end %>
 			
 						<th>点数表<br>番号</th>
 						<td class="number_split">1</td>
 						<th>医療機関<br>コード</th>
-						<% @clinic_information.clinic_code.to_s.chars.each do |num| %>
-							<td class="number_split"><%= num.to_i %></td>
+						<% if @clinic_information.clinic_code.nil? %>
+							<% 8.times do %>
+								<td class="number_split"></td>
+							<% end %>
+						<% else %>
+							<% @clinic_information.clinic_code.to_s.chars.each do |num| %>
+								<td class="number_split"><%= num.to_i %></td>
+							<% end %>
 						<% end %>
 					</tr>
 				</table>

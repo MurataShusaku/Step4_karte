@@ -18,7 +18,7 @@
   flex-direction: column;
 }
 .invoice-h1{
-  font-size: 35px;
+  font-size: 28px;
   margin:0px auto 15px;
 }
 
@@ -40,12 +40,19 @@
   font-weight: bold;
   border-bottom: solid;
 }
-.clinic-information{
+.patient-information{
   margin-left: 25px;
   padding-top: 20px;
 }
-.clinic-information p{
-  margin: 11px;
+
+.patient-information-dl{
+	display: flex;
+	flex-direction: column;
+}
+.patient-information-dl-div{
+	display: flex;
+	flex-direction: row;
+	margin: 3px;
 }
 
 /* テーブルーーーーーーーーーーーーーー */
