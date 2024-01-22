@@ -1,5 +1,5 @@
 <% tax_rate = 0.1r %>
-<% total_insurance_score = @treatments.inject(0){|result,tre|(tre.category != 0)? result += tre.score : result+= 0} %>
+<% total_insurance_score = @karte_history.treatments.inject(0){|result,tre|(tre.category != 0)? result += tre.score : result+= 0} %>
 <section class="invoice-box">
 	<h1 class="invoice-h1">診療費請求書兼領収書</h1>
 	<p class="issue-date">発行日 <%=Time.now.strftime("%Y年%m月%d日") %></p>
