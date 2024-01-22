@@ -5,6 +5,7 @@ class CreateKarteHistories < ActiveRecord::Migration[7.0]
       t.string :karte_id
       t.timestamps
       t.text :prescription_additional_comment
+      t.text :clinical_department
     end
   end
 end

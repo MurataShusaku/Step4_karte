@@ -14,19 +14,22 @@
   height: 848px;
   border: 1px solid;
   display: flex;
-	font-size: 17px;
+	font-size: 11px;
   flex-direction: column;
 }
 .invoice-h1{
-  font-size: 28px;
+  font-size: 25px;
   margin:0px auto 15px;
 }
+.issue-date{text-align: end;}
 
 .name-amount{
+	width: 45%;
 }
 .invoice-up-side{
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 /* 患者名の装飾 */
@@ -43,6 +46,7 @@
 .patient-information{
   margin-left: 25px;
   padding-top: 20px;
+	width: 45%;
 }
 
 .patient-information-dl{
@@ -54,21 +58,39 @@
 	flex-direction: row;
 	margin: 3px;
 }
+.patient-information-dt{
+	width: 25%;
+}
 
 /* テーブルーーーーーーーーーーーーーー */
-.invoice-table{
-  border-collapse: collapse;
-  width: 100%;
-  margin: 30px auto ;
+
+.invoice-detail{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.invoice-left{
+	width: 45%;
+}
+.invoice-right{
+	width: 45%;
+	height: 40%;
 }
 
-.invoice-thtd{
-  border: 1px solid #696969;
-  padding: 4px;
+.invoice-right-col1{
+	width: 70%;
 }
-.col-1{width: 60%;}
-.col-2{width: 20%;}
-.col-3{width: 20%;}
+.invoice-right-col2{
+	width: 30%;
+	text-align: right;
+}
+
+.invoice-left-col1{
+	width: 75%;
+}
+.invoice-left-col2{
+	text-align: right;
+}
 
 .caption{
   background-color: #ccc;
@@ -77,9 +99,7 @@
   text-align: start;
   padding-left: 13px;
 }
-.col-mid-right{
-  text-align: end;
-}
+
 .no-col{
   border: none;
 }

@@ -121,9 +121,9 @@
 	<table class="forth-table">
 		<tr>
 			<th class="col-4-1">交付年月日</th>
-			<td class="col-4-2"><%= @karte_history.created_at.in_time_zone('Tokyo').to_date.strftime("%Y年%m月%d日") %></td>
+			<td class="col-4-2">　<%= @karte_history.created_at.in_time_zone('Tokyo').to_date.strftime("%Y年%m月%d日") %></td>
 			<th class="col-4-3">処方箋の使用期間</th>
-			<td class="col-4-4"><%= (@karte_history.prescription_limit_date == nil)? "　　　年　　月　　日" : @karte_history.prescription_limit_date.strftime("%Y年%m月%d日") %></td>
+			<td class="col-4-4">　<%= (@karte_history.prescription_limit_date == nil)? "　　　年　　月　　日" : @karte_history.prescription_limit_date.strftime("%Y年%m月%d日") %></td>
 		</tr>
 	</table>
 	<table class="fifth-table">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_20_051304) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_22_060058) do
   create_table "clinic_informations", force: :cascade do |t|
     t.string "name"
     t.string "postal_code"
@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_051304) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "prescription_additional_comment"
+    t.text "clinical_department"
     t.date "prescription_limit_date"
   end
 
@@ -67,6 +68,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_051304) do
     t.string "coverage_type"
     t.string "address"
     t.string "memo"
+    t.integer "insuranse_rate"
+    t.string "insured_relationship_type"
+    t.string "insuranse_type"
     t.date "birthdate"
   end
 
@@ -88,6 +92,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_20_051304) do
   create_table "treatment_masters", force: :cascade do |t|
     t.string "name"
     t.integer "score"
+    t.integer "category"
+    t.boolean "insuranse_cover", default: false
     t.index ["name"], name: "index_treatment_masters_on_name", unique: true
   end
 

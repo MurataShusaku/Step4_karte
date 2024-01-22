@@ -13,6 +13,9 @@ class CreatePatientHistories < ActiveRecord::Migration[7.1]
       t.string :coverage_type
       t.string :address
       t.string :memo
+      t.integer :insuranse_rate
+      t.string :insured_relationship_type
+      t.string :insuranse_type
     end
   end
 end
