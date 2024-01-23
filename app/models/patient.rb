@@ -3,4 +3,5 @@ class Patient < ApplicationRecord
 	has_many :kartes
 
 	
+	
 end

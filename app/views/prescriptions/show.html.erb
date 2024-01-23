@@ -17,12 +17,12 @@
 				<% end %>
 
 			<th class="col-3">保険者番号</th>
-			<% if @karte_history.karte.patient.patient_histories.last.insuranse_card_number.nil? %>
+			<% if @karte_history.karte.patient.patient_histories.last.insurance_card_number.nil? %>
 				<% 8.times do %>
 					<td class="number_split" class="col-4"></td>
 				<% end %>
 			<% else %>
-				<% @karte_history.karte.patient.patient_histories.last.insuranse_card_number.to_s.chars.each do |num| %>
+				<% @karte_history.karte.patient.patient_histories.last.insurance_card_number.to_s.chars.each do |num| %>
 					<td class="number_split" class="col-4"><%= num.to_i %></td>
 				<% end %>
 			<% end %>

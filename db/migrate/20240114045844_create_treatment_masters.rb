@@ -4,7 +4,7 @@ class CreateTreatmentMasters < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :score
       t.integer :category
-      t.boolean :insuranse_cover, default:false
+      t.boolean :insurance_cover, default:false
     end
     add_index :treatment_masters, :name, unique: true
   end
