@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
-gem "rails",                      "7.0.4.3"
+gem "rails"                    
 gem "image_processing",           "1.12.2"
 gem "active_storage_validations", "0.9.8"
 gem "bcrypt",                     "3.1.18"
@@ -17,7 +17,7 @@ gem "importmap-rails",            "1.1.5"
 gem "turbo-rails",                "1.4.0"
 gem "stimulus-rails",             "1.2.1"
 gem "jbuilder",                   "2.11.5"
-gem "puma",                       "5.6.8"
+gem "puma"
 gem "bootsnap",                   "1.16.0", require: false
 gem "sqlite3",                    "1.6.1"
 

@@ -1,0 +1,315 @@
+*{
+	box-sizing: border-box;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/* ---------請求書-------------- */
+.invoice-box{
+  padding: 25px;
+  margin: auto;
+  width: 600px;
+  height: 848px;
+  border: 1px solid;
+  display: flex;
+	font-size: 11px;
+  flex-direction: column;
+}
+.invoice-h1{
+  font-size: 25px;
+  margin:0px auto 15px;
+}
+.issue-date{text-align: end;}
+
+.name-amount{
+	width: 45%;
+}
+.invoice-up-side{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/* 患者名の装飾 */
+#patient-name{
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: solid;
+}
+#total-amount{
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: solid;
+}
+.patient-information{
+  margin-left: 25px;
+  padding-top: 20px;
+	width: 45%;
+}
+
+.patient-information-dl{
+	display: flex;
+	flex-direction: column;
+}
+.patient-information-dl-div{
+	display: flex;
+	flex-direction: row;
+	margin: 3px;
+}
+.patient-information-dt{
+	width: 25%;
+}
+
+/* テーブルーーーーーーーーーーーーーー */
+
+.invoice-detail{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.invoice-left{
+	width: 45%;
+}
+.invoice-right{
+	width: 45%;
+	height: 40%;
+}
+
+.invoice-right-col1{
+	width: 70%;
+}
+.invoice-right-col2{
+	width: 30%;
+	text-align: right;
+}
+
+.invoice-left-col1{
+	width: 75%;
+}
+.invoice-left-col2{
+	text-align: right;
+}
+
+.caption{
+  background-color: #ccc;
+}
+.col-left{
+  text-align: start;
+  padding-left: 13px;
+}
+
+.no-col{
+  border: none;
+}
+
+
+
+
+
+/* -------------------------------- */
+
+.prescription-box{
+	padding: 3px 10px;
+	margin: auto;
+	width: 700px;
+	height: 989px;
+	border: 1px solid;
+	display: flex;
+	font-size: 9px;
+	flex-direction: column;
+}
+h1{
+	font-size: 22px;
+	margin:0px auto 0px;
+}
+
+#under-shoho{
+	margin: 0px auto;
+}
+table{	border-collapse: collapse;}
+
+th,td{
+	border: 1px solid #000;
+}
+
+.first-table{
+	height: 4%;
+	width: 100%;
+}
+.col-1{width: 18%;}
+.col-2{width: 28%;
+	
+			}
+.col-3{width: 24%;}
+.col-4{width: 28%;}
+
+/* 保険番号数字分割のためのCSS--- */
+.number_split{
+	font-size: 22px;
+	text-align: center;
+}
+
+
+.second-table{
+	height: 4%;
+  width: 100%;
+  margin: 0 ;
+	justify-content:start ;
+	text-align: center;
+
+}
+.col-2-1{width: 18%;}
+.col-2-2{width: 28%;}
+.col-2-3{width: 24%;}
+.col-2-4{width: 28%;}
+
+
+#additional{font-size: 8px;}
+
+.box-side{
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: end;
+	height: 14%;
+
+}
+
+.third-table{
+	height: 80%;
+	width: 50%;
+	text-align: center;
+
+}
+.col-3-1{width: 5%;}
+.col-3-2{width: 26%;}
+.col-3-3{width: 25%;}
+.col-3-4{width: 28%;}
+
+
+.pre-clinic-information{
+	width: 53%;
+	margin-left: 2%;
+	height: 90%;
+}
+
+.dl-clinic-information{
+	display: flex;
+	flex-direction: column;
+	
+}
+.prefecture-table{
+	width: 100% ;
+}
+.cli-item{
+	display: flex;
+	flex-direction: row;
+	margin: 4px;
+}
+
+.cli-item-dt{
+	width: 19%;
+	text-align-last: justify;
+}
+.cli-item-dd{	position: relative;}
+
+.stamp-zone1{
+	position: absolute;
+	left: 150px;
+  border-radius: 50%;
+	border: solid 1px #000;
+  width: 15px;
+  height: 15px;
+  color: #000;
+  text-align: center;
+}
+
+
+.forth-table{
+	height: 5%;
+}
+
+.col-4-1{width: 20%;}
+.col-4-2{width: 28%;}
+.col-4-3{width: 25%;}
+.col-4-4{}
+
+
+.fifth-table{
+	height: 25%;
+}
+
+.col-5-1{width: 4%;}
+.col-5-2{
+	width: 15%;
+	vertical-align: top;}
+.not-change-words{
+	margin: 10px;
+}
+.col-5-3{width: 76%;
+					vertical-align: top;}
+
+#prescription-ul{padding: 10px;}
+.prescription-content{
+	font-size: 12px;
+	list-style: none;
+	margin-bottom: 10px;
+}
+
+.sixth-table{
+	height: 15%;
+}
+
+.row-6-1{
+	height: 25%;
+}
+
+.col-6-1{
+	width: 4%;
+}
+.col-6-2{
+	width: 96%;
+	text-align: start;
+	}
+.col-6-3{
+	height: 20%;
+}
+#p-col-6-3{
+	margin: 0px;
+	text-align: center;
+}
+
+
+
+
+
+.seventh-table{
+	height: 3%;
+}
+
+.col-7-1{width: 20%;}
+.col-7-2{width: 25%;}
+.col-7-3{width: 25%;}
+
+.eighth-table{
+	height: 3%;
+}
+.col-8-1{width: 20%;}
+.col-8-2{
+	width: 25%;
+	text-align: end;
+	
+}
+.circle-stamp{
+	border-radius: 50%;
+	border: solid 1px #000;
+	padding: 2px;
+  width: 16px;
+  height: 16px;
+  color: #000;
+  text-align: center;
+}
+.col-8-3{width: 29%;}
+

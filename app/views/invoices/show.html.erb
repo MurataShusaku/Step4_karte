@@ -1,0 +1,135 @@
+<% tax_rate = 0.1r %>
+<% total_insurance_score = @karte_history.treatment_masters.inject(0){|result,tre|(tre.category != 0)? result += tre.score : result+= 0} %>
+<section class="invoice-box">
+	<h1 class="invoice-h1">診療費請求書兼領収書</h1>
+	<p class="issue-date">発行日 <%=Time.now.strftime("%Y年%m月%d日") %></p>
+	<div class="invoice-up-side">
+		<div class="name-amount">
+			<p id="patient-name">氏名　<%= @karte_history.karte.patient.patient_histories.last.name %> 様</p>
+			
+			<p id="total-amount">ご請求額　<%= (total_insurance_score) * @karte_history.karte.patient.patient_histories.last.insurance_rate + (@karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 0 )? sum += treatment.score : sum += 0 } * 1.1).to_i * 10 %>円</p>
+		</div>
+		<div class="patient-information">
+			<dl class="patient-information-dl">
+				<div class="patient-information-dl-div"><dt class="patient-information-dt">診療日</dt><dd><%=@karte_history.created_at.strftime("%Y年%m月%d日") %></dd></div>
+				<div class="patient-information-dl-div"><dt class="patient-information-dt">受診科</dt><dd><%=@karte_history.clinical_department %></dd></div>
+				<div class="patient-information-dl-div"><dt class="patient-information-dt">保険種類</dt><dd><%=@karte_history.karte.patient.patient_histories.last.insurance_type %></dd></div>
+				<div class="patient-information-dl-div"><dt class="patient-information-dt">本人・家族</dt><dd><%=@karte_history.karte.patient.patient_histories.last.insured_relationship_type %></dd></div>
+				<div class="patient-information-dl-div"><dt class="patient-information-dt">負担割合</dt><dd><%=@karte_history.karte.patient.patient_histories.last.insurance_rate %>割</dd></div>
+			</dl>
+		</div>
+	</div>
+		<div class="invoice-detail">
+
+			<table class="invoice-left">
+				<tr>
+					<th class="invoice-left-col1">初・再診療</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 1 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>医学管理料</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 2 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>在宅医療</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 3 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>投薬</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 4 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>注射</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 5 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>処置</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 6 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>手術</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 7 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>麻酔</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 8 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>検査</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 9 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>画像診断</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 10 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>リハビリテーション</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 11 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+					<tr>
+					<th>精神科専門療法</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 12 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>				
+				<tr>
+					<th>放射線治療</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 13 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>				
+				<tr>
+					<th>病理診断</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 14 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>病理診断</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 15 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>入院科等</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 16 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+				<tr>
+					<th>その他</th>
+					<td class="invoice-left-col2"><%= @karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 17 )? sum += treatment.score : sum += 0 }%> 点</td>
+				</tr>
+		
+				<tr>
+					<th>合計点数</th>
+					<td class="invoice-left-col2"><%=total_insurance_score %> 点</td>
+				</tr>
+			</table>
+		
+
+			<table class="invoice-right">
+				<tr>
+					<th class="invoice-right-col1">保険分負担額</th>
+					<td class="invoice-right-col2"><%=(total_insurance_score) * @karte_history.karte.patient.patient_histories.last.insurance_rate %>円</td>
+				</tr>
+				<tr>
+					<th>保険外負担額(税込)</th>
+					<td class="invoice-right-col2"><%=(@karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 0 )? sum += treatment.score : sum += 0} * 1.1 * 10).to_i %>円</td>
+		
+				<tr>
+					<th>領収金額</th>
+					<td class="invoice-right-col2"><%=(total_insurance_score) * @karte_history.karte.patient.patient_histories.last.insurance_rate + (@karte_history.treatment_masters.inject(0){|sum,treatment|(treatment.category == 0 )? sum += treatment.score : sum += 0 } * 1.1).to_i * 10 %>円</td>
+				</tr>
+			</table>
+		
+	</div>
+	<div>
+		<p>※領収書は再発行致しかねますので、大切に保管して下さい。</p>
+		<p>※厚生労働省が定める診療報酬や薬価等には、医療機関等が仕入れ時に負担する消費税が反映されています。</p>
+	</div>
+
+		<div class="clinic-information">
+			<p><%= @clinic_information.postal_code%><br><%= @clinic_information.address%></p>
+			<p><%= @clinic_information.name%></p>
+			<p><%= @clinic_information.phone_number%></p>
+		</div>
+
+</section>
+
+
+<% @karte_history.treatment_masters.each do |treatment|%>
+	<p><%=treatment.name %> <%= treatment.score %><treatment.category %>点</p>
+
+<% end %>
+
