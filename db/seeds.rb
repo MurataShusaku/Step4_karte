@@ -65,8 +65,8 @@ TreatmentMaster.create(name: :'採血40ml', score: 9000,category: 6)
 Staff.create(created_by: "村田")
 Staff.create(created_by: "村田")
 
-StaffHistory.create(staff_id: 1,name:"高山真聖")
-StaffHistory.create(staff_id: 2,name:"菅野久樹")
+StaffHistory.create(staff_id: 1,name:"田中たろう")
+StaffHistory.create(staff_id: 2,name:"電子カル男")
 
 KarteHistory.create(doctor: 1, karte_id: 1, prescription_additional_comment: :'いい感じじゃん',clinical_department: "内科")
 KarteHistory.create(doctor: 1, karte_id: 1, prescription_additional_comment: nil,clinical_department: "内科")
